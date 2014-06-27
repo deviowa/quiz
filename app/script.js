@@ -2,6 +2,7 @@ var questions = {}
 var used = [];
 var answer;
 var score = 0;
+var amount = 0;
 
 function getQuestion() {
     var id;
@@ -61,6 +62,7 @@ function checkAnswers(a) {
     if (a.html() === answer) {
         score += 1;
     }
+    console.log(score);
 
     for (i = 1; i <= 4; i++) {
         temp = $('#answer' + i);
@@ -71,7 +73,7 @@ function checkAnswers(a) {
         }
     }
 
-    $('#next-question').css("opacity", 1);
+    $('#next-question').css("display", "block").removeAttr("disabled");
 }
 
 $(function() {
@@ -80,6 +82,11 @@ $(function() {
     });
 
     $('.button').on('click', function() {
+        $('body').html($('#amount-format').text());
+    });
+
+    $(document).on('click', '.amount-button', function() {
+        amount = $(this).html(); 
         $('body').html($('#questions-format').text());
         loadQuestion();
     });
@@ -89,6 +96,24 @@ $(function() {
     });
 
     $(document).on('click', '#next-question', function() {
-        loadQuestion();
+        $('#next-question').css("display", "none").attr("disabled", "true");
+        amount--;
+        if(amount != 0)
+            loadQuestion();
+        else {
+           $('body').html($('#score-format').text());
+        }
     });
+
+    $(document).on('click', '.done-button', function() {
+        location.reload();
+    });
+
+
+
+
+
+
+
+
 });
