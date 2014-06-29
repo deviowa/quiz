@@ -14,9 +14,54 @@ body {
     padding: 1em;
 }
 
+.amount-button {
+	margin: 0;
+}
 
+#amount-container {
+	text-align: center;
+}
 
+h3 {
+	font-size: 5vw;
+	margin: auto;
+	margin-top: 15%;
+	margin-bottom: 30px;
+	text-align: center;
+}
 
+.question-text {
+	margin: 3% 4%;
+	font-size: 2vw;
+}
+
+#answer-container {
+	text-align: center;
+}
+
+#done-container {
+	font-size: 5vw;
+	text-align: center;
+}
+
+#next-question {
+	display: none;
+	margin: auto;
+	margin-top: 2%;
+}
+
+#done {
+	margin: auto;
+}
+
+#col-md-6 {
+	margin-top: 3%;
+	margin-bottom: 5%;
+}
+
+#result {
+	margin-top: 4%;
+}
 
 
 

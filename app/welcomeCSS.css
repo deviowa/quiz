@@ -1,12 +1,14 @@
 .begin{
 	height:50%;
 	font-size:72px;
-	margin-left:43%;
+	/*margin-left:43%;*/
+  margin: auto;
 }
 h1{
 	font-size: 5vw;
 	padding:0;
-	margin-left:40%;
+	/*margin-left:40%;*/
+  text-align: center;
 	margin-top:15%;
 	margin-bottom:30px;
 	height:20%;
@@ -50,4 +52,8 @@ background-color: hsl(273, 100%, 30%) !important;
   -webkit-font-smoothing: antialiased;
 	color:white !important;
 	font-size: 3vw;
+}
+
+.button {
+  text-align: center;
 }

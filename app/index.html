@@ -14,39 +14,65 @@
 		<link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css'/>
 		<!-- Local includes -->
 		<link type="text/css" rel="stylesheet" href="welcomeCSS.css"/>
+		<link rel="stylesheet" rel="stylesheet" href="style.css">
 		<script src="script.js"></script>
 
 </head>
 <body>
 
 <script type="text/template" id="amount-format">
+	<div id="background">
+    	<img src="http://i1252.photobucket.com/albums/hh570/mudzy2k6/Whiteboard_Background_zpsbba3bfab.png" class="stretch" alt="" />
+	</div>
 	<h3>How many questions?</h3>
 	
 	<div id="amount-container">
-		<button type="button" class="amount-button" id="amount1">5</button>
-		<button type="button" class="amount-button" id="amount2">10</button>
-		<button type="button" class="amount-button" id="amount3">20</button>
+		<button type="button" class="amount-button btn btn-lg btn-primary begin" id="amount1">5</button>
+		<button type="button" class="amount-button btn btn-lg btn-primary begin" id="amount2">10</button>
+		<button type="button" class="amount-button btn btn-lg btn-primary begin" id="amount3">20</button>
 	</div>
 
 	<script type="text/template" id="questions-format">
+		<div id="background">
+	    	<img src="http://i1252.photobucket.com/albums/hh570/mudzy2k6/Whiteboard_Background_zpsbba3bfab.png" class="stretch" alt="" />
+		</div>
+
 		<h3 class="question-text"></h3>
 		
 		<div id="answer-container">
-			<button type="button" class="answer-button" id="answer1"> </button>
-			<button type="button" class="answer-button" id="answer2"> </button>
-			<button type="button" class="answer-button" id="answer3"> </button>
-			<button type="button" class="answer-button" id="answer4"> </button>
+			<div id="row">
+				<div class="col-md-6">
+					<button type="button" class="answer-button btn btn-lg btn-default" id="answer1"> </button>
+				</div>
+				<div id="col-md-6">
+					<button type="button" class="answer-button btn btn-lg btn-default" id="answer2"> </button>
+				</div>
+			</div>
+			<div id="row">
+				<div class="col-md-6">
+					<button type="button" class="answer-button btn btn-lg btn-default" id="answer3"> </button>
+				</div>
+				<div class="col-md-6">
+					<button type="button" class="answer-button btn btn-lg btn-default" id="answer4"> </button>
+				</div>
+			</div>
 		</div>
 
+		<h3 id="result"></h3>
+
 		<div id="next-question-container">
-			<button type="button" id="next-question" style="display:none" disabled=true> Next Question! </button>
+			<button type="button" id="next-question" class="btn btn-lg btn-primary begin" disabled=true> Next Question! </button>
 		</div>
 
 		<script type="text/template" id="score-format">
+			<div id="background">
+    			<img src="http://i1252.photobucket.com/albums/hh570/mudzy2k6/Whiteboard_Background_zpsbba3bfab.png" class="stretch" alt="" />
+			</div>
+
 			<h3 id="score"></h3>
 			
 			<div id="done-container">
-				<button type="button" class="done-button" id="done">Done</button>
+				<button type="button" class="done-button btn btn-lg btn-primary begin" id="done">Done</button>
 			</div>
 		</script>
 	</script>

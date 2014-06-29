@@ -2,7 +2,7 @@ var questions = {}
 var used = [];
 var answer;
 var score = 0;
-var amount = 0;
+var amount, total = 0;
 
 function getQuestion() {
     var id;
@@ -48,10 +48,11 @@ function loadQuestion() {
 
 
     $('.question-text').html(q.question);
-    $('#answer1').attr('class', 'answer-button').html(answers[0]);
-    $('#answer2').attr('class', 'answer-button').html(answers[1]);
-    $('#answer3').attr('class', 'answer-button').html(answers[2]);
-    $('#answer4').attr('class', 'answer-button').html(answers[3]);
+    $('#answer1').attr('class', 'answer-button btn btn-lg btn-default').html(answers[0]);
+    $('#answer2').attr('class', 'answer-button btn btn-lg btn-default').html(answers[1]);
+    $('#answer3').attr('class', 'answer-button btn btn-lg btn-default').html(answers[2]);
+    $('#answer4').attr('class', 'answer-button btn btn-lg btn-default').html(answers[3]);
+    $('#result').text('');
 
 }
 
@@ -61,6 +62,10 @@ function checkAnswers(a) {
 
     if (a.html() === answer) {
         score += 1;
+        $('#result').text('Correct!');
+    }
+    else {
+        $('#result').text('Wrong answer.');
     }
     console.log(score);
 
@@ -86,7 +91,8 @@ $(function() {
     });
 
     $(document).on('click', '.amount-button', function() {
-        amount = $(this).html(); 
+        amount = $(this).html();
+        total = amount;
         $('body').html($('#questions-format').text());
         loadQuestion();
     });
@@ -102,6 +108,7 @@ $(function() {
             loadQuestion();
         else {
            $('body').html($('#score-format').text());
+           $('#score').text('You got ' + score + ' out of ' + total);
         }
     });
 
